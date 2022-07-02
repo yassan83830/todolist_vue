@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>My Vue App</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    
+    <div id="app" class="container">
+        <h1>My App</h1>
+        <input type="text" v-model="newComment">
+        <button v-on:click="addTodo">追加</button>
+        <li v-for="(todo,index) in todos">            
+            <input type="checkbox" v-model="todo.isDone">
+            <span>{{ todo.comment }}</span>
+            <button v-on:click="deleteComment(index)">削除</button>
+        </li>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
